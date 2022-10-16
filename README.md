@@ -1,10 +1,8 @@
-# CDK SAM Local lambda
-
-Running a Lambda locally with SAM and CDK.
+# Running a CDK/SAM Lambda function locally on Docker
 
 # Structure
- * stack - contains cloud stackstructure to work with the lambda
- * lambdas - contains the lambda function
+ * stack - contains cdk-defined cloud infrastructure to work with the lambda
+ * lambda - contains the lambda function itself
 
 # Prerequisites
 Install [docker](https://docs.docker.com/get-docker/), [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html), [cdk](https://docs.aws.amazon.com/cdk/v2/guide/cli.html), and [sam](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html).
