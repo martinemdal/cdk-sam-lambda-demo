@@ -1,5 +1,10 @@
 plugins {
     kotlin("jvm") version "1.7.20"
+    id("application")
+}
+
+application {
+    mainClass.set("stack.StackKt")
 }
 
 sourceSets.main {
@@ -17,8 +22,8 @@ kotlin {
 }
 
 dependencies {
-    implementation("com.amazonaws:aws-lambda-java-events:3.11.0")
-    implementation("com.amazonaws:aws-lambda-java-core:1.2.1")
+// https://mvnrepository.com/artifact/software.amazon.awscdk/aws-cdk-lib
+    implementation("software.amazon.awscdk:aws-cdk-lib:2.46.0")
     testImplementation(kotlin("test"))
 }
 

@@ -1,4 +1,4 @@
-package lambdas
+package lambda
 
 import com.amazonaws.services.lambda.runtime.Context
 import com.amazonaws.services.lambda.runtime.RequestHandler
@@ -6,7 +6,7 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent
 import java.time.Instant
 
-class ExampleLambda : RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
+class KotlinFun : RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
   override fun handleRequest(event: APIGatewayProxyRequestEvent, context: Context): APIGatewayProxyResponseEvent {
     println(
       """

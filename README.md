@@ -3,7 +3,7 @@
 Running a Lambda locally with SAM and CDK.
 
 # Structure
- * infra - contains cloud infrastructure to work with the lambda
+ * stack - contains cloud stackstructure to work with the lambda
  * lambdas - contains the lambda function
  * layer - contains dependencies the lambda can use
 
@@ -20,11 +20,11 @@ Install [docker](https://docs.docker.com/get-docker/), [aws-cli](https://docs.aw
 ```
 #### 2. synthesize the stack
 ```shell
-cd infra && cdk synth --no-staging
+cd stack && cdk synth --no-staging
 ```
 #### 3. runs the lambda locally
 ```shell
-cd infra && sam local invoke KotlinFun --no-event -t cdk.out/Stack.template.json
+cd stack && sam local invoke KotlinFun --no-event -t cdk.out/Stack.template.json
 ```
 
 ### Deploy the lambda to AWS
@@ -32,7 +32,7 @@ cd infra && sam local invoke KotlinFun --no-event -t cdk.out/Stack.template.json
 `gradle clean build`
 #### 2. synthesize the stack
 ```shell
-cd infra && cdk synth
+cd stack && cdk synth
 ```
 #### 3. bootstrap AWS resources needed by CDK
 ```shell
