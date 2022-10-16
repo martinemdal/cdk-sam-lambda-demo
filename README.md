@@ -1,31 +1,36 @@
-# kaggle-projects/sdk-sam-lambda-demo
+# CDK SAM Local lambda
 
+Running a Lambda locally with SAM and CDK.
 
+# Structure
+infra - contains cloud infrastructure to work with the lambda
+lambdas - contains the lambda function
+layer - contains dependencies the lambda can use
 
-## Getting Started
+# Prerequisites
+Install [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html), [cdk](https://docs.aws.amazon.com/cdk/v2/guide/cli.html), and [sam](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html).
 
-Download links:
+## Commands
 
-SSH clone URL: ssh://git@git.jetbrains.space/folke/kaggle-projects/sdk-sam-lambda-demo.git
+### Run Lambda locally
 
-HTTPS clone URL: https://git.jetbrains.space/folke/kaggle-projects/sdk-sam-lambda-demo.git
+#### 1. build the solution
+`gradle clean build` 
+#### 2. go to the infra package
+`cd infra`
+#### 3. dunno, build the project thingy i guess?
+`cdk synth --no-staging`
+#### 4. runs the lambda locally
+`sam local invoke KotlinFun --no-event -t cdk.out/Stack.template.json`
 
-
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-## Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Examples
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a production system.
-
-## Resources
-
-Add links to external resources for this project, such as CI server, bug tracker, etc.
+### Deploy the lambda to AWS
+#### 1. build the solution
+`gradle clean build`
+#### 2. go to the infra package
+`cd infra`
+#### 3. synthesize the cloudformation templates
+`cdk synth`
+#### 3. bootstrap AWS resources needed by CDK
+`cdk bootstrap`
+#### 4. deploy the stack
+`cdk deploy`
